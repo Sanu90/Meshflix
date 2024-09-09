@@ -31,4 +31,6 @@ margin-bottom: 30px;
     position: absolute;
     bottom: 10px;
     right: 10px;
+    text-decoration: none;
+    color:#fff;
 }
