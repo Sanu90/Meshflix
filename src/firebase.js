@@ -8,6 +8,7 @@ import {
   signOut,
 } from "firebase/auth/cordova";
 import { addDoc, collection, getFirestore } from "firebase/firestore/lite";
+import { toast } from "react-toastify";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -40,7 +41,7 @@ const signUp = async (name, email, pass) => {
     });
   } catch (error) {
     console.log("Error in firebase signup", error);
-    alert(error);
+    toast.error("Email already registered");
   }
 };
 
@@ -49,7 +50,8 @@ const login = async (email, pass) => {
     await signInWithEmailAndPassword(auth, email, pass);
   } catch (error) {
     console.log("Error in firebase login", error);
-    alert(error);
+    //toast.error(error.code);
+    toast.error("Invalid username/password");
   }
 };
 

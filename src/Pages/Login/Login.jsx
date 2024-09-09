@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./Login.css";
 import logo from "../../assets/logo.png";
 import { login, signUp } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [signState, setSignState] = useState("Sign In");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  //const navigate = useNavigate();
 
   const userAuth = async (event) => {
     event.preventDefault();
@@ -20,7 +22,13 @@ const Login = () => {
 
   return (
     <div className="login">
-      <img src={logo} className="login-logo" alt="Netflix" />
+      <img
+        src={logo}
+        className="login-logo"
+        alt="Netflix"
+        // onClick={() => navigate("/")}
+        // style={{ cursor: "pointer" }}
+      />
       <div className="login-form">
         <h1>{signState}</h1>
         <form>
