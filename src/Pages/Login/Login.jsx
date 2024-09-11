@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import logo from "../../assets/logo.png";
 import { login, signUp } from "../../firebase";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [signState, setSignState] = useState("Sign In");
